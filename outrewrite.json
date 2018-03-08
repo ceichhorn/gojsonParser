@@ -1,0 +1,613 @@
+{
+  "apis": [
+    {
+      "api_model": {},
+      "api_definition": {
+        "id": "57682901bca4811fea000008",
+        "name": "Web API",
+        "slug": "web-api",
+        "api_id": "1942560722a347e76e11eff81ae22407",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "apiKey",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "v4/breakingnews/{platform}?{key}",
+                    "method": "GET",
+                    "match_pattern": "v4\\/breakingnews\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "v4/breakingnews/$1?$3&global=false"
+                  }
+                ],
+                "virtual": [
+                  {
+                    "response_function_name": "pageurlToHTTPS",
+                    "function_source_type": "blob",
+                    "function_source_uri": "ZnVuY3Rpb24gcGFnZXVybFRvSFRUUFMocmVxdWVzdCwgc2Vzc2lvbiwgY29uZmlnKSB7Ci8vICAgICAgICBsb2coIj09PT09PT09PT09IFNldHVwIFJlcXVlc3QgT2JqZWN0ID09PT09PT09PT09IikKLy8gICAgICAgIGxvZygiPT4gUkVRVUVTVCBVUkwgSVM6ICIgKyByZXF1ZXN0LlVSTCkKIAogICAgICAgIHZhciBxdWVyeVBhcmFtcyA9ICIiCiAgICAgICAgZm9yICh2YXIgayBpbiByZXF1ZXN0LlBhcmFtcykgewogICAgICAgICAgaWYgKHJlcXVlc3QuUGFyYW1zLmhhc093blByb3BlcnR5KGspKSB7CiAgICAgICAgICAgIHF1ZXJ5UGFyYW1zICs9IGsgKyAiPSIgKyByZXF1ZXN0LlBhcmFtc1trXSArICImIgogICAgICAgICAgfQogICAgICAgIH0KIAovLyAgICAgICAgbG9nKCI9PiBORVcgUVVFUlkgUEFSQU1TIElTOiAiICsgcXVlcnlQYXJhbXMpCiAgICAgICAKICAgICAgICB2YXIgYmFja2VuZFVSTCA9IHJlcXVlc3QuVVJMLnJlcGxhY2UoIndlYi8iLCAiIikKLy8gICAgICAgIGxvZygiPT4gYmFja2VuZFVSTCBJUzogIiArIHF1ZXJ5UGFyYW1zKQogICAgICAgCiAgICAgICAgdmFyIGZ1bGxSZXF1ZXN0VVJMID0gImh0dHA6Ly93ZWItYXBpLnByb2R1Y3Rpb24uZ2FubmV0dGRpZ2l0YWwuY29tIiArIGJhY2tlbmRVUkwgKyAiPyIgKyBxdWVyeVBhcmFtcwovLyAgICAgICAgbG9nKCI9PiBSZXF1ZXN0IFVSTDogIiArIGZ1bGxSZXF1ZXN0VVJMKQogCiAgICAgICAgdmFyIG5ld1JlcXVlc3QgPSB7CiAgICAgICAgICAgIk1ldGhvZCI6ICJHRVQiLAogICAgICAgICAgICAiQm9keSI6ICIiLAogICAgICAgICAgICAiSGVhZGVycyI6IHt9LAogICAgICAgICAgICAiRG9tYWluIjogZnVsbFJlcXVlc3RVUkwsCiAgICAgICAgICAgICJSZXNvdXJjZSI6IGJhY2tlbmRVUkwsCiAgICAgICAgICAgICJGb3JtRGF0YSI6IHt9CiAgICAgICAgfQogCi8vICAgICAgICBsb2coIj0+IFJlcXVlc3RpbmcgRGF0YSAtLS0tLS0tLS0iKQogICAgICAgIGFwaXJlc3BvbnNlID0gVHlrTWFrZUh0dHBSZXF1ZXN0KEpTT04uc3RyaW5naWZ5KG5ld1JlcXVlc3QpKTsKICAgICAgICB1c2FibGVSZXNwb25zZSA9IEpTT04ucGFyc2UoYXBpcmVzcG9uc2UpOwoKLy8gICAgICAgIGxvZygiPT0+IFJlc3BvbnNlIGNvZGU6ICIgKyB1c2FibGVSZXNwb25zZS5Db2RlKTsKLy8gICAgICAgIGxvZygiPT0+IFJlc3BvbnNlIGJvZHk6ICIgKyB1c2FibGVSZXNwb25zZS5Cb2R5KTsKCiAgICAgICAgdmFyIG9iakJvZHkgPSBKU09OLnBhcnNlKHVzYWJsZVJlc3BvbnNlLkJvZHkpOwovLyAgICAgICAgaWYgKG9iakJvZHkucGFnZV91cmwuaW5jbHVkZXMoInd3dy51c2F0b2RheS5jb20iKSB7CiAgICAgICAgICBvYmpCb2R5LnBhZ2VfdXJsID0gb2JqQm9keS5wYWdlX3VybC5yZXBsYWNlKCJodHRwOi8vd3d3LnVzYXRvZGF5LmNvbSIsICJodHRwczovL3d3dy51c2F0b2RheS5jb20iKTsKLy8gICAgICAgIH0KLy8gICAgICAgIGxvZygiTmV3IHBhZ2VfdXJsOiAiICsgb2JqQm9keS5wYWdlX3VybCk7CiAgICAgICAgdXNhYmxlUmVzcG9uc2UuQm9keSA9IEpTT04uc3RyaW5naWZ5KG9iakJvZHkpOwoKLy8gICAgICAgIGxvZygiPT0+IFJlc3BvbnNlIGJvZHk6ICIgKyB1c2FibGVSZXNwb25zZS5Cb2R5KTsKCiAgICAgICB2YXIgcmVzcG9uc2VPYmplY3QgPSB7CiAgICAgICAgICAgIEJvZHk6IHVzYWJsZVJlc3BvbnNlLkJvZHksCiAgICAgICAgICAgIENvZGU6IHVzYWJsZVJlc3BvbnNlLkNvZGUsCiAgICAgICAgICAgIEhlYWRlcnM6IHt9CiAgICAgICAgfQogICAgICAgICAgICByZXNwb25zZU9iamVjdC5IZWFkZXJzWyJTdXJyb2dhdGUtS2V5Il0gPSBTdHJpbmcodXNhYmxlUmVzcG9uc2UuSGVhZGVyc1siU3Vycm9nYXRlLUtleSJdKQoKCiAgICAgICAgcmV0dXJuIFR5a0pzUmVzcG9uc2UocmVzcG9uc2VPYmplY3QsIHt9KQp9CmxvZygiPT09PT09PT09PT0gcGFnZXVybFRvSFRUUFMgaW5pdGlhbGlzZWQgPT09PT09PT09PT0iKQ==",
+                    "path": "vdisabled/(assets|content)/",
+                    "method": "GET",
+                    "use_session": false
+                  },
+                  {
+                    "response_function_name": "canonicalurlToHTTPS",
+                    "function_source_type": "blob",
+                    "function_source_uri": "ZnVuY3Rpb24gY2Fub25pY2FsdXJsVG9IVFRQUyhyZXF1ZXN0LCBzZXNzaW9uLCBjb25maWcpIHsKLy8gICAgICAgIGxvZygiPT09PT09PT09PT0gU2V0dXAgUmVxdWVzdCBPYmplY3QgPT09PT09PT09PT0iKQovLyAgICAgICAgbG9nKCI9PiBSRVFVRVNUIFVSTCBJUzogIiArIHJlcXVlc3QuVVJMKQogCiAgICAgICAgdmFyIHF1ZXJ5UGFyYW1zID0gIiIKICAgICAgICBmb3IgKHZhciBrIGluIHJlcXVlc3QuUGFyYW1zKSB7CiAgICAgICAgICBpZiAocmVxdWVzdC5QYXJhbXMuaGFzT3duUHJvcGVydHkoaykpIHsKICAgICAgICAgICAgcXVlcnlQYXJhbXMgKz0gayArICI9IiArIHJlcXVlc3QuUGFyYW1zW2tdICsgIiYiCiAgICAgICAgICB9CiAgICAgICAgfQogCi8vICAgICAgICBsb2coIj0+IE5FVyBRVUVSWSBQQVJBTVMgSVM6ICIgKyBxdWVyeVBhcmFtcykKICAgICAgIAogICAgICAgIHZhciBiYWNrZW5kVVJMID0gcmVxdWVzdC5VUkwucmVwbGFjZSgid2ViLyIsICIiKQovLyAgICAgICAgbG9nKCI9PiBiYWNrZW5kVVJMIElTOiAiICsgcXVlcnlQYXJhbXMpCiAgICAgICAKICAgICAgICB2YXIgZnVsbFJlcXVlc3RVUkwgPSAiaHR0cDovL3dlYi1hcGkucHJvZHVjdGlvbi5nYW5uZXR0ZGlnaXRhbC5jb20iICsgYmFja2VuZFVSTCArICI/IiArIHF1ZXJ5UGFyYW1zCi8vICAgICAgICBsb2coIj0+IFJlcXVlc3QgVVJMOiAiICsgZnVsbFJlcXVlc3RVUkwpCiAKICAgICAgICB2YXIgbmV3UmVxdWVzdCA9IHsKICAgICAgICAgICAiTWV0aG9kIjogIkdFVCIsCiAgICAgICAgICAgICJCb2R5IjogIiIsCiAgICAgICAgICAgICJIZWFkZXJzIjoge30sCiAgICAgICAgICAgICJEb21haW4iOiBmdWxsUmVxdWVzdFVSTCwKICAgICAgICAgICAgIlJlc291cmNlIjogYmFja2VuZFVSTCwKICAgICAgICAgICAgIkZvcm1EYXRhIjoge30KICAgICAgICB9CiAKLy8gICAgICAgIGxvZygiPT4gUmVxdWVzdGluZyBEYXRhIC0tLS0tLS0tLSIpCiAgICAgICAgYXBpcmVzcG9uc2UgPSBUeWtNYWtlSHR0cFJlcXVlc3QoSlNPTi5zdHJpbmdpZnkobmV3UmVxdWVzdCkpOwogICAgICAgIHVzYWJsZVJlc3BvbnNlID0gSlNPTi5wYXJzZShhcGlyZXNwb25zZSk7Ci8vICAgICAgICBsb2coIj09PiBSZXNwb25zZSBjb2RlOiAiICsgdXNhYmxlUmVzcG9uc2UuQ29kZSk7Ci8vICAgICAgICBsb2coIj09PiBSZXNwb25zZSBib2R5OiAiICsgdXNhYmxlUmVzcG9uc2UuQm9keSk7CgogICAgICAgIHZhciBvYmpCb2R5ID0gSlNPTi5wYXJzZSh1c2FibGVSZXNwb25zZS5Cb2R5KTsKCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBvYmpCb2R5Lmxlbmd0aDsgaSsrKSB7CiAgICAgICAgICAgIGZvciAodmFyIHByb3AgaW4gb2JqQm9keVtpXSkgewogICAgICAgICAgICAgICAgaWYgKG9iakJvZHlbaV0uaGFzT3duUHJvcGVydHkocHJvcCkgJiYgcHJvcCA9PSAiZnJvbnRfYXR0cnMiKSB7CiAgICAgICAgICAgICAgICAgICAgb2JqQm9keVtpXVtwcm9wXS5jYW5vbmljYWx1cmwgPSBvYmpCb2R5W2ldW3Byb3BdLmNhbm9uaWNhbHVybC5yZXBsYWNlKCJodHRwOiIsICJodHRwczoiKTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgdXNhYmxlUmVzcG9uc2UuQm9keSA9IEpTT04uc3RyaW5naWZ5KG9iakJvZHkpOwoKLy8gICAgICAgIGxvZygiPT0+IFJlc3BvbnNlIGJvZHk6ICIgKyB1c2FibGVSZXNwb25zZS5Cb2R5KTsKCiAgICAgICB2YXIgcmVzcG9uc2VPYmplY3QgPSB7CiAgICAgICAgICAgIEJvZHk6IHVzYWJsZVJlc3BvbnNlLkJvZHksCiAgICAgICAgICAgIENvZGU6IHVzYWJsZVJlc3BvbnNlLkNvZGUsCiAgICAgICAgICAgIEhlYWRlcnM6IHt9CiAgICAgICAgfQogICAgICAgICAgICByZXNwb25zZU9iamVjdC5IZWFkZXJzWyJTdXJyb2dhdGUtS2V5Il0gPSBTdHJpbmcodXNhYmxlUmVzcG9uc2UuSGVhZGVyc1siU3Vycm9nYXRlLUtleSJdKQoKCiAgICAgICAgcmV0dXJuIFR5a0pzUmVzcG9uc2UocmVzcG9uc2VPYmplY3QsIHt9KQp9CmxvZygiPT09PT09PT09PT0gY2Fub25pY2FsdXJsVG9IVFRQUyBpbml0aWFsaXNlZCA9PT09PT09PT09PSIp",
+                    "path": "vdisabled/fronts/USAT/",
+                    "method": "GET",
+                    "use_session": false
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/web/",
+          "target_url": "http://web-api.production.gannettdigital.com/",
+          "strip_listen_path": true,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": true,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 0,
+          "enable_cache": false,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-internal",
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": {}
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "57680bf8bca4811fea000006",
+        "name": "AppServices - Mobile Feeds",
+        "slug": "appservices-mobile-feeds",
+        "api_id": "e773fcf4f38e41cb48028315274661c2",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "api_key",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "albumgalleries/v1/",
+                    "method": "GET",
+                    "match_pattern": "\\/albumgalleries\\/v1\\/(.*)\\/(\\?)(.*)",
+                    "rewrite_to": "/v4/galleryAlbums/$1?consumer=mobilefeeds&$3"
+                  },
+                  {
+                    "path": "breakingnews/v1",
+                    "method": "GET",
+                    "match_pattern": "\\/breakingnews\\/v1\\/(.*)\\/(\\?)(siteId=)([0-9]+)&(.*)",
+                    "rewrite_to": "/v4/breakingnews/$4/$1?consumer=mobilefeeds&$5"
+                  },
+                  {
+                    "path": "galleries/v1/",
+                    "method": "GET",
+                    "match_pattern": "\\/galleries\\/v1\\/(.*)\\/(\\?)(.*)",
+                    "rewrite_to": "/v4/assets/$1?consumer=mobilefeeds&$3"
+                  },
+                  {
+                    "path": "fronts/v1/",
+                    "method": "GET",
+                    "match_pattern": "\\/fronts\\/v1\\/([(a-zA-Z)_-]+)(\\/\\?|\\?)(siteId=)([0-9]+)&(.*)",
+                    "rewrite_to": "/v4/fronts/$4/$1?consumer=mobilefeeds&$5"
+                  },
+                  {
+                    "path": "assets/v1/",
+                    "method": "GET",
+                    "match_pattern": "\\/assets\\/v1\\/(.*)\\/(\\?)(.*)",
+                    "rewrite_to": "/v4/assets/$1?consumer=mobilefeeds&$3"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/mobilefeeds/",
+          "target_url": "http://mobile-api.production.gannettdigital.com/",
+          "strip_listen_path": false,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 0,
+          "enable_cache": false,
+          "cache_all_safe_requests": false,
+          "cache_response_codes": [],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+  {
+      "api_model": {},
+      "api_definition": {
+        "id": "5768290278c01f2271000009",
+        "name": "Gannett Digital Syndication - /fronts/local",
+        "slug": "gannett-digital-syndication",
+        "api_id": "8e6fe30eceeb493e483da00b3fd772a1",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "apiKey",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "fronts/{frontname}?{key}",
+                    "method": "GET",
+                    "match_pattern": "fronts\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/USAT/$1?sc=usat&cs=usat&format=xml&fullText=true&fullTextFn=stripAuthoringMarkup&fq=-authoringtypecode:promo&$3"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/fronts/local",
+          "target_url": "http://syndication-api.production.gannettdigital.com/",
+          "strip_listen_path": false,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 120,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    }
+  ],
+  "pages": 8
+}

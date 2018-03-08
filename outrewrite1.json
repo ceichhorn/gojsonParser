@@ -1,0 +1,815 @@
+{
+  "apis": [
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "576c5896bca4811fea000045",
+        "name": "Gannett Digital Syndication - /front/usat/",
+        "slug": "gannett-digital-syndication-front-usat",
+        "api_id": "098a51232ca64efc7c0c545ed3dd1b10",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "apiKey",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "/front/usat/washington?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/washington(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/news_politics?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  },
+                  {
+                    "path": "/front/usat/sports?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/sports(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/sports?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  },
+                  {
+                    "path": "/front/usat/nation?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/nation(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/news_nation?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  },
+                  {
+                    "path": "/front/usat/money?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/money(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/money?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  },
+                  {
+                    "path": "/front/usat/world?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/world(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/news_world?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  },
+                  {
+                    "path": "/front/usat/life?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/life(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/life?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  },
+                  {
+                    "path": "/front/usat/tech?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/front\\/usat\\/tech(\\?)(.*)",
+                    "rewrite_to": "/syndication/fronts/1/tech?format=rss2&sc=briefme-13a14bbb5b4bc1c068bdeb5237e0ab6f&$2"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/front/usat/",
+          "target_url": "http://syndication-api.production.gannettdigital.com/",
+          "strip_listen_path": false,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 120,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+    {
+      "api_model": {},
+      "api_definition": {
+        "id": "57682901bca4811fea000009",
+        "name": "Photos",
+        "slug": "photos",
+        "api_id": "af1e92fce31449b06ae5787af87a8cc8",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "api_key",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "galleries/2317",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1408971"
+                  },
+                  {
+                    "path": "galleries/2345",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1408971"
+                  },
+                  {
+                    "path": "galleries/333",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1599625"
+                  },
+                  {
+                    "path": "galleries/373",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1411813"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/photos/",
+          "target_url": "http://api-internal-usatoday.production.gannettdigital.com/FeedService/Monitor.svc/usatoday/photosapi/",
+          "strip_listen_path": true,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 600,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "576c655778c01f227100003f",
+        "name": "Gannett Digital Syndication - Root /syndication/",
+        "slug": "gannett-digital-syndication-root-syndication",
+        "api_id": "26b69f1902984bb6566ee44d11177ed9",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "apiKey",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "/fronts/1/home?{key}",
+                    "method": "GET",
+                    "match_pattern": "fronts\\/1\\/home(\\?)(apiKey=57646bc6bca4811fea000001cc9899e4cc144ec478df16d7eea9de5c)",
+                    "rewrite_to": "fronts/1/home?sc=USAT&format=rss2&fullText=false&count=4&$2"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/syndication/",
+          "target_url": "http://syndication-api.production.gannettdigital.com/syndication/",
+          "strip_listen_path": true,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 120,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "57689d88bca4811fea000034",
+        "name": "Windows 8 Hub",
+        "slug": "windows-8-hub",
+        "api_id": "7e98722436964c305970b2b99e8a9b74",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "api_key",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "win8hub",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "apps/windows8/hub.ashx"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/win8hub",
+          "target_url": "http://content.usatoday.com/apps/windows8/hub.ashx",
+          "strip_listen_path": true,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 120,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    }
+  ],
+  "pages": 8
+)

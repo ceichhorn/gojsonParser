@@ -1,0 +1,29 @@
+"use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "galleries/2317",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1408971"
+                  },
+                  {
+                    "path": "galleries/2345",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1408971"
+                  },
+                  {
+                    "path": "galleries/333",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1599625"
+                  },
+                  {
+                    "path": "galleries/373",
+                    "method": "GET",
+                    "match_pattern": "",
+                    "rewrite_to": "galleries/1411813"
+                  }
+                ]
+              },

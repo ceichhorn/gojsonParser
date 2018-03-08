@@ -1,0 +1,1037 @@
+{
+  "apis": [
+  {
+      "api_model": {},
+      "api_definition": {
+        "id": "576a8d53bca4811fea00003e",
+        "name": "Articles",
+        "slug": "articles",
+        "api_id": "da8db0688cc54e916e7947ec429a9295",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "api_key",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "/articles/syndication/usatoday/fronts/{paths}?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/syndication\\/usatoday\\/fronts\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/syndication/V4/sites/USAT/fronts/$1?count=15&format=xml&$3"
+                  },
+                  {
+                    "path": "articles/gannett/sites/{paths}?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "articles\\/gannett\\/sites\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/syndication/V4/sites/$1?fulltext=true&format=json&$3"
+                  },
+                  {
+                    "path": "/articles/briefs/nvt/sports?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/briefs\\/nvt\\/sports(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles/topnews/sports?format=rss&source=usa,usatoday,int,usatoday.com,blog,gannett,gns,sw&$2"
+                  },
+                  {
+                    "path": "/articles/briefs/nvt/money?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/briefs\\/nvt\\/money(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles/topnews/money?format=rss&source=usa,usatoday,int,usatoday.com,blog,gannett,gns,sw&$2"
+                  },
+                  {
+                    "path": "/articles/briefs/nvt/{paths}?{key}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/briefs\\/nvt\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles/$1?format=rss&source=usa,usatoday,int,usatoday.com,blog,gannett,gns,sw&$3"
+                  },
+                  {
+                    "path": "/articles/briefs/{paths}?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/briefs\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles/$1?format=rss&$3"
+                  },
+                  {
+                    "path": "/articles/light/{paths}?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/light\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles/$1?format=light&$3"
+                  },
+                  {
+                    "path": "/articles/nitfx/{paths}?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/nitfx\\/(.*)(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles/$1?format=nitfx&$3"
+                  },
+                  {
+                    "path": "/articles/usatxml/full?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/articles\\/usatxml\\/full(\\?)(.*)",
+                    "rewrite_to": "/FeedService/Monitor.svc/usatoday/articles?format=fullformat&$2"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/articles/",
+          "target_url": "http://api-internal-usatoday.production.gannettdigital.com/",
+          "strip_listen_path": false,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 480,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "576c660278c01f2271000040",
+        "name": "Gannett Digital Syndication - /assets/",
+        "slug": "gannett-digital-syndication-assets",
+        "api_id": "dced0c8854b1459f7792ecbbc95ad155",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "apiKey",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "/assets/search?{qskey}",
+                    "method": "GET",
+                    "match_pattern": "\\/assets\\/search(\\?)(.*)",
+                    "rewrite_to": "/syndication/assets?sc=polar-8a21a98849efc47b65d201747721f544&format=rss2&fq=sstssection%3Asponsor-story&category=subsection,siteName&$2"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/assets/",
+          "target_url": "http://syndication-api.production.gannettdigital.com/",
+          "strip_listen_path": false,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 120,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "57686aea78c01f2271000030",
+        "name": "AppServices - OEMBED",
+        "slug": "appservices-oembed",
+        "api_id": "ae6867a5a17949326e537ef501f1823c",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "api_key",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "/oembed-asset/",
+                    "method": "GET",
+                    "match_pattern": "\\/oembed-asset\\/(\\?)(.*)",
+                    "rewrite_to": "/oembed/assets/?$2"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/appservices/",
+          "target_url": "http://oembed-api.production.gannettdigital.com/",
+          "strip_listen_path": true,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 900,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "5792214c8c91fa204d000005",
+        "name": "Popularity API",
+        "slug": "popularity-api",
+        "api_id": "ed68a0c7f4b6496c786bd332c3c871ef",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": true,
+          "param_name": "api_key",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "Authorization"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "header",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "url_rewrites": [
+                  {
+                    "path": "trending-assets/robust/v1/",
+                    "method": "GET",
+                    "match_pattern": "trending-assets\\/robust\\/v1\\/\\?hostname=usatoday.com&api_key=(.*)",
+                    "rewrite_to": "ping/v1/most-popular/1/?mobileAsset=true&api_key=$1"
+                  }
+                ]
+              },
+              "global_headers": {},
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/popularity/",
+          "target_url": "http://ping.production.gannettdigital.com/",
+          "strip_listen_path": false,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 120,
+          "enable_cache": true,
+          "cache_all_safe_requests": true,
+          "cache_response_codes": [
+            200
+          ],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": false,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "",
+        "do_not_track": false,
+        "tags": [
+          "api-public"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    },
+{
+      "api_model": {},
+      "api_definition": {
+        "id": "57aa3ae9fa40b42006000004",
+        "name": "paas-api-deployment",
+        "slug": "paas-api-deployment",
+        "api_id": "1613ab7189094aa374d5de8b55eb81c6",
+        "org_id": "57646bc6bca4811fea000001",
+        "use_keyless": false,
+        "use_oauth2": false,
+        "use_openid": false,
+        "openid_options": {
+          "providers": [],
+          "segregate_by_client": false
+        },
+        "oauth_meta": {
+          "allowed_access_types": [],
+          "allowed_authorize_types": [],
+          "auth_login_redirect": ""
+        },
+        "auth": {
+          "use_param": false,
+          "param_name": "",
+          "use_cookie": false,
+          "cookie_name": "",
+          "auth_header_name": "x-api-key"
+        },
+        "use_basic_auth": false,
+        "enable_jwt": false,
+        "use_standard_auth": true,
+        "enable_coprocess_auth": false,
+        "jwt_signing_method": "",
+        "jwt_source": "",
+        "jwt_identity_base_field": "",
+        "jwt_client_base_field": "",
+        "jwt_policy_field_name": "",
+        "notifications": {
+          "shared_secret": "",
+          "oauth_on_keychange_url": ""
+        },
+        "enable_signature_checking": false,
+        "hmac_allowed_clock_skew": -1,
+        "base_identity_provided_by": "",
+        "definition": {
+          "location": "url",
+          "key": "x-api-version"
+        },
+        "version_data": {
+          "not_versioned": true,
+          "versions": {
+            "Default": {
+              "name": "Default",
+              "expires": "",
+              "paths": {
+                "ignored": [],
+                "white_list": [],
+                "black_list": []
+              },
+              "use_extended_paths": true,
+              "extended_paths": {
+                "ignored": [
+                  {
+                    "path": "/v1/deployment/{id}/haproxy",
+                    "method_actions": {
+                      "GET": {
+                        "action": "no_action",
+                        "code": 200,
+                        "data": "",
+                        "headers": {}
+                      }
+                    }
+                  },
+                  {
+                    "path": "/v1/swagger.json",
+                    "method_actions": {
+                      "GET": {
+                        "action": "no_action",
+                        "code": 200,
+                        "data": "",
+                        "headers": {}
+                      }
+                    }
+                  },
+                  {
+                    "path": "/v1/swagger.yaml",
+                    "method_actions": {
+                      "GET": {
+                        "action": "no_action",
+                        "code": 200,
+                        "data": "",
+                        "headers": {}
+                      }
+                    }
+                  },
+                  {
+                    "path": "/v1/status",
+                    "method_actions": {
+                      "GET": {
+                        "action": "no_action",
+                        "code": 200,
+                        "data": "",
+                        "headers": {}
+                      }
+                    }
+                  }
+                ]
+              },
+              "global_headers": {
+                "x-tyk-api-key": "d292e2ed5029a3b9d571a122032eb4681"
+              },
+              "global_headers_remove": [],
+              "global_size_limit": 0,
+              "override_target": ""
+            }
+          }
+        },
+        "uptime_tests": {
+          "check_list": [],
+          "config": {
+            "expire_utime_after": 0,
+            "service_discovery": {
+              "use_discovery_service": false,
+              "query_endpoint": "",
+              "use_nested_query": false,
+              "parent_data_path": "",
+              "data_path": "",
+              "port_data_path": "",
+              "target_path": "",
+              "use_target_list": false,
+              "cache_timeout": 60,
+              "endpoint_returns_list": false
+            },
+            "recheck_wait": 0
+          }
+        },
+        "proxy": {
+          "preserve_host_header": false,
+          "listen_path": "/",
+          "target_url": "https://paas-api-deployment-origin.gannettdigital.com/",
+          "strip_listen_path": true,
+          "enable_load_balancing": false,
+          "target_list": [],
+          "check_host_against_uptime_tests": false,
+          "service_discovery": {
+            "use_discovery_service": false,
+            "query_endpoint": "",
+            "use_nested_query": false,
+            "parent_data_path": "",
+            "data_path": "hostname",
+            "port_data_path": "port",
+            "target_path": "/api-slug",
+            "use_target_list": false,
+            "cache_timeout": 60,
+            "endpoint_returns_list": false
+          }
+        },
+        "disable_rate_limit": false,
+        "disable_quota": false,
+        "custom_middleware": {
+          "pre": [],
+          "post": [],
+          "post_key_auth": [],
+          "auth_check": {
+            "name": "",
+            "path": "",
+            "require_session": false
+          },
+          "response": [],
+          "driver": "",
+          "id_extractor": {
+            "extract_from": "",
+            "extract_with": "",
+            "extractor_config": {}
+          }
+        },
+        "custom_middleware_bundle": "",
+        "cache_options": {
+          "cache_timeout": 60,
+          "enable_cache": false,
+          "cache_all_safe_requests": false,
+          "cache_response_codes": [],
+          "enable_upstream_cache_control": false
+        },
+        "session_lifetime": 0,
+        "active": true,
+        "auth_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": {}
+        },
+        "session_provider": {
+          "name": "",
+          "storage_engine": "",
+          "meta": null
+        },
+        "event_handlers": {
+          "events": {}
+        },
+        "enable_batch_request_support": false,
+        "enable_ip_whitelisting": false,
+        "allowed_ips": [],
+        "dont_set_quota_on_create": false,
+        "expire_analytics_after": 0,
+        "response_processors": [],
+        "CORS": {
+          "enable": true,
+          "allowed_origins": [],
+          "allowed_methods": [],
+          "allowed_headers": [],
+          "exposed_headers": [],
+          "allow_credentials": false,
+          "max_age": 24,
+          "options_passthrough": false,
+          "debug": false
+        },
+        "domain": "paas-api-deployment.gannettdigital.com",
+        "do_not_track": false,
+        "tags": [
+          "api-internal"
+        ],
+        "enable_context_vars": false,
+        "config_data": null
+      },
+      "hook_references": [],
+      "is_site": false,
+      "sort_by": 0
+    }
+],
+  "pages": 8
+}
+

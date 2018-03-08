@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ResponseCache name="response-caching">
+    <DisplayName>response-caching</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix/>
+        <KeyFragment ref="request.uri" type="string"/>
+    </CacheKey>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <ExpiryDate/>
+        <TimeOfDay/>
+        <TimeoutInSec>TIMEOUT</TimeoutInSec>
+    </ExpirySettings>
+    <SkipCacheLookup>(request.verb != "GET") and (request.verb != "HEAD")</SkipCacheLookup>
+    <SkipCachePopulation>(request.verb != "GET") and (request.verb != "HEAD")</SkipCachePopulation>
+</ResponseCache>

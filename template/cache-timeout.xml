@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="cache-timeout">
+    <DisplayName>cache-timeout</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>cache-timeout</Name>
+        <Value>60</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</AssignMessage>

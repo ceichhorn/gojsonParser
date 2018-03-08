@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="GannettDigitalSyndicationfrontsusat">
+    <Basepaths>/fronts/usat/</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <Description/>
+    <DisplayName>gannett-digital-syndication-fronts-usat</DisplayName>
+    <Policies>
+        <Policy>url-rewrite</Policy>
+        <Policy>verify-shared-flow</Policy>
+        <Policy>response-caching</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://url-rewrite.js</Resource>
+    </Resources>
+    <Spec/>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
